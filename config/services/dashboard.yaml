@@ -1,0 +1,14 @@
+services:
+    _defaults:
+        autowire: true
+        autoconfigure: true
+
+    App\Dashboard\DashboardSearch:
+        arguments:
+            - '%sylius.grids_definitions%'
+            - '@sylius.grid.provider'
+            - '@sylius.grid.filters_applicator'
+            - '@sylius.grid_driver.doctrine.orm'
+            - '@sylius.custom_grid_renderer.twig.inner'
+            - '@sylius.grid.view_factory'
+

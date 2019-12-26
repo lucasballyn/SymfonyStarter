@@ -16,3 +16,6 @@ sylius_backend_customer:
 
 sylius_backend_security:
     resource: "backend/security.yaml"
+
+sylius_backend_search:
+    resource : "backend/search.yaml"

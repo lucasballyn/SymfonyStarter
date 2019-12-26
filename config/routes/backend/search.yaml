@@ -1,0 +1,4 @@
+sylius_backend_search:
+    path: /search
+    defaults:
+        _controller: App\Controller\DashboardController:searchAction

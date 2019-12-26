@@ -1,0 +1,30 @@
+{% import '@SyliusUi/Macro/pagination.html.twig' as pagination %}
+{% import '@SyliusUi/Macro/buttons.html.twig' as buttons %}
+{% import '@SyliusUi/Macro/messages.html.twig' as messages %}
+{% import '@SyliusUi/Macro/table.html.twig' as table %}
+
+{% set definition = grid.definition %}
+{% set data = grid.data %}
+
+{% set path = path(app.request.attributes.get('_route'), app.request.attributes.get('_route_params')) %}
+{% set criteria = app.request.query.get('criteria') %}
+
+{% if data|length > 0 %}
+    <div class="ui segment spaceless sylius-grid-table-wrapper">
+        <table class="ui sortable stackable very basic celled table">
+            <thead>
+            <tr>
+{#                {{ table.headers(grid, definition, app.request.attributes) }}#}
+            </tr>
+            </thead>
+            <tbody>
+            {% for row in data %}
+
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% else %}
+    {{ messages.info('sylius.ui.no_results_to_display') }}
+{% endif %}
+    {{ pagination.simple(data) }}
